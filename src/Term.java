@@ -109,10 +109,10 @@ public class Term implements Comparable<Term> {
 				} else {
 					//If either word is shorter than the prefixsize, that word
 					//is immediately set lower
-					if(v.getWord().length() <= newsize && newsize != myPrefixSize) {
+					if(v.getWord().length() <= newsize && newsize != myPrefixSize && !( w.getWord().length() <= newsize)) {
 						ret = -1;
 					}
-					if(w.getWord().length() <= newsize && newsize != myPrefixSize) {
+					if(w.getWord().length() <= newsize && newsize != myPrefixSize && !( v.getWord().length() <= newsize)) {
 						ret = 1;
 					}
 				}
