@@ -35,8 +35,11 @@ public class BinarySearchLibrary {
     	int firstIndex(List<T> list, 
 	               	T target, Comparator<T> comp) {
 		//Sets an invariant over the list
+		if(list.size() == 0) return -1;
+
 		int low = -1;
 		int high = list.size()-1;
+
 		while(low+1 != high) {
 			//Compares mid to target
 			int mid = (high+low)/2;
@@ -72,9 +75,10 @@ public class BinarySearchLibrary {
 	int lastIndex(List<T> list, 
                	  T target, Comparator<T> comp) {
 		//Sets invariant [low, high)
+		if(list.size() == 0) return -1;
+
 		int low = 0;
 		int high = list.size();
-		
 		while(low != high-1) {
 			//Sets mid and compares to target
 			int mid = (high+low)/2;
